@@ -1,0 +1,220 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 3,
+      "number_of_replicas": 1,
+      "refresh_interval": "30s",
+      "max_result_window": 50000,
+      "max_ngram_diff": 2,
+      "max_rescore_window": 10000,
+      "max_inner_result_window": 100,
+      "max_adjacency_matrix_filters": 100,
+      "translog": {
+        "flush_threshold_size": "512mb",
+        "sync_interval": "30s",
+        "durability": "async"
+      },
+      "merge": {
+        "policy": {
+          "max_merged_segment": "5gb",
+          "segments_per_tier": 10,
+          "max_merge_at_once": 10
+        }
+      },
+      "codec": "best_compression",
+      "routing": {
+        "allocation": {
+          "total_shards_per_node": 3,
+          "enable": "all"
+        }
+      },
+      "blocks": {
+        "read_only_allow_delete": false
+      },
+      "knn": {
+        "algo_param_ef_search": 512
+      }
+    },
+    "analysis": {
+      "analyzer": {
+        "trigram_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "stop",
+            "ascii_folding",
+            "trigram_filter"
+          ]
+        },
+        "story_text_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "stop",
+            "ascii_folding",
+            "stemmer",
+            "word_delimiter",
+            "trim"
+          ]
+        },
+        "search_as_you_type_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "ascii_folding",
+            "edge_ngram_filter"
+          ]
+        },
+        "exact_analyzer": {
+          "type": "custom",
+          "tokenizer": "keyword",
+          "filter": [
+            "lowercase",
+            "trim"
+          ]
+        },
+        "opensearch_standard": {
+          "type": "standard",
+          "stopwords": "_english_"
+        }
+      },
+      "normalizer": {
+        "keyword_normalizer": {
+          "type": "custom",
+          "filter": [
+            "lowercase",
+            "trim"
+          ]
+        }
+      },
+      "filter": {
+        "trigram_filter": {
+          "type": "ngram",
+          "min_gram": 3,
+          "max_gram": 3
+        },
+        "edge_ngram_filter": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 20
+        }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "dynamic_templates": [
+      {
+        "strings_as_keywords": {
+          "match_mapping_type": "string",
+          "match": "*_id",
+          "mapping": {
+            "type": "keyword",
+            "normalizer": "keyword_normalizer"
+          }
+        }
+      }
+    ],
+    "_source": {
+      "enabled": true,
+      "compress": true,
+      "compress_threshold": "1kb"
+    },
+    "_all": {
+      "enabled": false
+    },
+    "properties": {
+      "id": {
+        "type": "integer",
+        "doc_values": true,
+        "index": true
+      },
+      "story": {
+        "type": "text",
+        "analyzer": "story_text_analyzer",
+        "search_analyzer": "story_text_analyzer",
+        "norms": true,
+        "index_options": "positions",
+        "store": false,
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 10000,
+            "normalizer": "keyword_normalizer",
+            "doc_values": false,
+            "norms": false,
+            "store": false
+          },
+          "length": {
+            "type": "token_count",
+            "analyzer": "standard",
+            "doc_values": true,
+            "store": false
+          },
+          "search_as_you_type": {
+            "type": "text",
+            "analyzer": "search_as_you_type_analyzer",
+            "search_analyzer": "standard",
+            "index_options": "docs",
+            "norms": false,
+            "fields": {
+              "shingle": {
+                "type": "text",
+                "analyzer": "search_as_you_type_analyzer",
+                "index_options": "docs"
+              }
+            }
+          }
+        }
+      },
+      "story_summary": {
+        "type": "text",
+        "analyzer": "story_text_analyzer",
+        "search_analyzer": "story_text_analyzer",
+        "norms": true,
+        "index_options": "positions",
+        "store": false,
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256,
+            "normalizer": "keyword_normalizer",
+            "doc_values": false,
+            "norms": false,
+            "store": false
+          },
+          "trigrams": {
+            "type": "text",
+            "analyzer": "trigram_analyzer",
+            "search_analyzer": "trigram_analyzer",
+            "norms": false,
+            "index_options": "docs",
+            "store": false
+          },
+          "suggest": {
+            "type": "completion",
+            "analyzer": "simple",
+            "preserve_separators": true,
+            "preserve_position_increments": true,
+            "max_input_length": 50,
+            "contexts": [
+              {
+                "name": "category",
+                "type": "category"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "aliases": {
+    "stories_current": {},
+    "stories_read": {
+      "is_write_index": false
+    }
+  }
+}
