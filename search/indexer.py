@@ -43,6 +43,11 @@ class SimpleSearchIndexer:
 
             # Create new index
             response = self.session.put(f"{self.base_url}/{index_name}", json=mapping)
+            if response.status_code >= 400:
+                print(f"❌ Error creating index: {response.status_code}")
+                print(f"Response: {response.text}")
+                return False
+            
             response.raise_for_status()
             print(f"✅ Created index: {index_name}")
             return True
@@ -88,6 +93,12 @@ class SimpleSearchIndexer:
                     f"{self.base_url}/{index_name}/_doc/{doc_id}",
                     json=indexed_doc
                 )
+                if response.status_code >= 400:
+                    print(f"❌ Error indexing {json_file.name}: {response.status_code}")
+                    print(f"Response: {response.text}")
+                    failed += 1
+                    continue
+                
                 response.raise_for_status()
                 print(f"✅ Indexed {json_file.name}")
                 successful += 1

@@ -32,7 +32,9 @@
         "read_only_allow_delete": false
       },
       "knn": {
-        "algo_param_ef_search": 512
+        "algo_param": {
+          "ef_search": 512
+        }
       }
     },
     "analysis": {
@@ -43,7 +45,7 @@
           "filter": [
             "lowercase",
             "stop",
-            "ascii_folding",
+            "asciifolding",
             "trigram_filter"
           ]
         },
@@ -53,9 +55,9 @@
           "filter": [
             "lowercase",
             "stop",
-            "ascii_folding",
+            "asciifolding",
             "stemmer",
-            "word_delimiter",
+            "word_delimiter_graph",
             "trim"
           ]
         },
@@ -64,7 +66,7 @@
           "tokenizer": "standard",
           "filter": [
             "lowercase",
-            "ascii_folding",
+            "asciifolding",
             "edge_ngram_filter"
           ]
         },
@@ -119,15 +121,10 @@
       }
     ],
     "_source": {
-      "enabled": true,
-      "compress": true,
-      "compress_threshold": "1kb"
-    },
-    "_all": {
-      "enabled": false
+      "enabled": true
     },
     "properties": {
-      "id": {
+      "document_id": {
         "type": "integer",
         "doc_values": true,
         "index": true
@@ -199,15 +196,13 @@
             "analyzer": "simple",
             "preserve_separators": true,
             "preserve_position_increments": true,
-            "max_input_length": 50,
-            "contexts": [
-              {
-                "name": "category",
-                "type": "category"
-              }
-            ]
+            "max_input_length": 50
           }
         }
+      },
+      "indexed_at": {
+        "type": "date",
+        "format": "strict_date_optional_time||epoch_millis"
       }
     }
   },
