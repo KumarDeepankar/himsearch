@@ -10,24 +10,52 @@ from pathlib import Path
 from datetime import datetime
 import requests
 import os
+import numpy as np
 
 
 class SimpleSearchIndexer:
-    def __init__(self, host="localhost", port=9200):
+    def __init__(self, host="localhost", port=9200, ollama_host="localhost", ollama_port=11434):
         self.base_url = f"http://{host}:{port}"
+        self.ollama_url = f"http://{ollama_host}:{ollama_port}"
         self.session = requests.Session()
         self.session.headers.update({"Content-Type": "application/json"})
+        self.embedding_model = "nomic-embed-text:latest"
 
     def test_connection(self):
-        """Test connection to search engine."""
+        """Test connection to search engine and Ollama."""
+        # Test search engine connection
         try:
             response = self.session.get(f"{self.base_url}/")
             response.raise_for_status()
             print("✅ Connected to search engine")
-            return True
         except requests.exceptions.RequestException as e:
             print(f"❌ Cannot connect to search engine: {e}")
             return False
+        
+        # Test Ollama connection
+        try:
+            response = self.session.get(f"{self.ollama_url}/api/tags")
+            response.raise_for_status()
+            print("✅ Connected to Ollama")
+            return True
+        except requests.exceptions.RequestException as e:
+            print(f"❌ Cannot connect to Ollama: {e}")
+            return False
+
+    def generate_embedding(self, text):
+        """Generate embedding using Ollama."""
+        try:
+            payload = {
+                "model": self.embedding_model,
+                "prompt": text
+            }
+            response = self.session.post(f"{self.ollama_url}/api/embeddings", json=payload)
+            response.raise_for_status()
+            result = response.json()
+            return result.get("embedding")
+        except Exception as e:
+            print(f"❌ Error generating embedding: {e}")
+            return None
 
     def create_index(self, index_name, mapping_file):
         """Create index with mapping."""
@@ -79,6 +107,15 @@ class SimpleSearchIndexer:
                 with open(json_file, 'r') as f:
                     doc = json.load(f)
 
+                # Generate embedding for doc_subject
+                doc_subject = doc.get("doc_subject")
+                doc_subject_embedding = None
+                if doc_subject:
+                    print(f"  🧠 Generating embedding for doc_subject: {doc_subject}")
+                    doc_subject_embedding = self.generate_embedding(doc_subject)
+                    if doc_subject_embedding is None:
+                        print(f"  ⚠️  Failed to generate embedding for {json_file.name}")
+
                 # Prepare document for indexing
                 indexed_doc = {
                     "document_id": doc.get("id"),
@@ -86,6 +123,10 @@ class SimpleSearchIndexer:
                     "story_summary": doc.get("story_summary"),
                     "indexed_at": datetime.utcnow().isoformat()
                 }
+
+                # Add doc_subject embedding if generated successfully
+                if doc_subject_embedding:
+                    indexed_doc["doc_subject"] = doc_subject_embedding
 
                 # Index document using the document ID
                 doc_id = doc.get("id")

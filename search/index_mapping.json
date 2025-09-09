@@ -31,11 +31,8 @@
       "blocks": {
         "read_only_allow_delete": false
       },
-      "knn": {
-        "algo_param": {
-          "ef_search": 512
-        }
-      }
+      "knn": true,
+      "knn.algo_param.ef_search": 512
     },
     "analysis": {
       "analyzer": {
@@ -203,6 +200,18 @@
       "indexed_at": {
         "type": "date",
         "format": "strict_date_optional_time||epoch_millis"
+      },
+      "doc_subject": {
+        "type": "knn_vector",
+        "dimension": 768,
+        "method": {
+          "name": "hnsw",
+          "space_type": "cosinesimil",
+          "parameters": {
+            "ef_construction": 512,
+            "m": 16
+          }
+        }
       }
     }
   },

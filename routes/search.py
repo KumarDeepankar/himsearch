@@ -15,14 +15,25 @@ search_engine = SearchEngine(SEARCH_ENGINE_URL, USERNAME, PASSWORD)
 async def search_stories(request: SearchRequest):
     """Search stories endpoint"""
     try:
-        result = search_engine.search(request.query, request.field, request.size)
+        result = search_engine.search(
+            request.query, 
+            request.field, 
+            request.size, 
+            request.semantic_boost,
+            request.include_fields,
+            request.exclude_fields
+        )
+        
+        # Check if semantic search was used
+        semantic_used = result.get("_meta", {}).get("semantic_search_used", False)
 
         return SearchResponse(
             hits=result.get("hits", {}).get("hits", []),
             total=result.get("hits", {}).get("total", {}).get("value", 0) if isinstance(
                 result.get("hits", {}).get("total"), dict) else result.get("hits", {}).get("total", 0),
             took=result.get("took", 0),
-            engine_type=search_engine.engine_type
+            engine_type=search_engine.engine_type,
+            semantic_search_used=semantic_used
         )
     except Exception as e:
         logger.error(f"Search error: {e}")
