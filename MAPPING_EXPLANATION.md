@@ -37,7 +37,7 @@ This document provides a comprehensive explanation of the `events` OpenSearch in
 
 ## Analyzers Configuration
 
-The index uses **3 custom analyzers** to enable different search capabilities:
+The index uses **4 custom analyzers** to enable different search capabilities:
 
 ### 1. Standard Search Analyzer
 
@@ -169,15 +169,73 @@ Matches:    All words starting with "tech"
 
 ---
 
+### 4. Docid Ngram Analyzer
+
+```json
+"docid_ngram_analyzer": {
+  "type": "custom",
+  "tokenizer": "keyword",
+  "filter": [
+    "lowercase",
+    "docid_ngram_filter"
+  ]
+}
+```
+
+**Filter definition:**
+```json
+"docid_ngram_filter": {
+  "type": "ngram",
+  "min_gram": 4,
+  "max_gram": 10
+}
+```
+
+**What it does:**
+- Uses **keyword tokenizer** (treats entire input as single token)
+- Converts to lowercase
+- Creates ngrams from 4-10 characters
+- Specifically designed for partial docid matching
+
+**Example:**
+```
+Input:  "DOC001"
+After keyword tokenization: ["DOC001"]
+After lowercase: ["doc001"]
+After ngram (4-10 chars):
+  4-grams: ["doc0", "oc00", "c001"]
+  5-grams: ["doc00", "oc001"]
+  6-grams: ["doc001"]
+```
+
+**Why keyword tokenizer?**
+- IDs should be treated as single units, not split into words
+- "DOC001" stays as one token, not split into "DOC" and "001"
+
+**Why min_gram = 4?**
+- Allows searching with 4+ character matches
+- Prevents too many false positives from short matches
+- User requirement: search docid with 4 characters minimum
+
+**Use case:**
+```
+Query:    "DOC0" (4 characters)
+Matches:  DOC001, DOC002, ..., DOC099
+```
+
+**Used for:** Partial document ID searching (minimum 4 characters)
+
+---
+
 ## Field Mappings
 
 ### Overview Table
 
 | Field | Type | Indexed? | Searchable? | Filterable? | Aggregatable? | Purpose |
 |-------|------|----------|-------------|-------------|---------------|---------|
-| `rid` | keyword | ❌ No | ❌ No | ❌ No | ❌ No | Storage only (record ID) |
-| `docid` | keyword | ❌ No | ❌ No | ❌ No | ❌ No | Storage only (document ID) |
-| `url` | keyword | ❌ No | ❌ No | ❌ No | ❌ No | Storage only (URL) |
+| `rid` | keyword | ❌ No | ❌ No | ❌ No | ✅ Yes* | Storage only (record ID) |
+| `docid` | keyword | ✅ Yes | ✅ Yes (exact + partial) | ✅ Yes | ✅ Yes | Document ID search & aggregation |
+| `url` | keyword | ❌ No | ❌ No | ❌ No | ✅ Yes* | Storage only (URL) |
 | `country` | keyword | ✅ Yes | ✅ Yes (exact) | ✅ Yes | ✅ Yes | Filtering and aggregation |
 | `year` | integer | ✅ Yes | ✅ Yes (exact) | ✅ Yes | ✅ Yes | Filtering and aggregation |
 | `event_count` | integer | ✅ Yes | ✅ Yes (exact) | ✅ Yes | ✅ Yes | Numerical analysis |
@@ -196,7 +254,65 @@ Matches:    All words starting with "tech"
 
 ### Detailed Field Configurations
 
-#### 1. Storage-Only Fields (Not Indexed)
+#### 1. Document ID Field (Searchable)
+
+##### Docid Field
+
+```json
+"docid": {
+  "type": "keyword",
+  "fields": {
+    "ngram": {
+      "type": "text",
+      "analyzer": "docid_ngram_analyzer"
+    }
+  }
+}
+```
+
+**Type:** `keyword` (exact value) with multi-field support
+
+**Multi-field configuration:**
+
+1. **`docid` (main field)**
+   - Type: `keyword`
+   - Use: Exact docid matching, aggregations, sorting
+   - Doc values: enabled by default
+   - Example query: `{"term": {"docid": "DOC001"}}`
+
+2. **`docid.ngram` (subfield)**
+   - Type: `text`
+   - Analyzer: `docid_ngram_analyzer` (4-10 character ngrams)
+   - Use: Partial docid matching (minimum 4 characters)
+   - Example query: `{"match": {"docid.ngram": "DOC0"}}`
+
+**Capabilities:**
+- ✅ Exact match: Search for specific docid
+- ✅ Partial match: Search with 4+ characters
+- ✅ Aggregations: Group by docid
+- ✅ Sorting: Order by docid
+- ✅ Filtering: Use in filter context
+
+**Use cases:**
+```python
+# Exact match
+{"query": {"term": {"docid": "DOC001"}}}
+
+# Partial match (4+ chars)
+{"query": {"match": {"docid.ngram": "DOC0"}}}  # Matches DOC001, DOC002, ...
+
+# Aggregate by docid
+{"aggs": {"by_docid": {"terms": {"field": "docid"}}}}
+
+# Wildcard search (alternative)
+{"query": {"wildcard": {"docid": "DOC0*"}}}
+```
+
+**Note:** The `*` suffix indicates fields with doc_values but not searchable (index: false)
+
+---
+
+#### 2. Storage-Only Fields (Not Indexed)
 
 ```json
 "rid": {
@@ -205,22 +321,25 @@ Matches:    All words starting with "tech"
 }
 ```
 
-**Fields:** `rid`, `docid`, `url`, `commentary_summary`, `next_event_plan`, `event_conclusion`, `event_conclusion_overall`, `next_event_suggestion`
+**Fields:** `rid`, `url`, `commentary_summary`, `next_event_plan`, `event_conclusion`, `event_conclusion_overall`, `next_event_suggestion`
 
 **Configuration:**
-- `"index": false` - Field is stored but not indexed
-- Cannot be searched, filtered, or aggregated
+- `"index": false` - Field is stored but not indexed for search
+- Cannot be searched or filtered
+- Can still be aggregated/sorted (doc_values enabled by default)
 - Only returned in search results
 - Saves index space and memory
 
 **Why these fields are not indexed:**
-- **IDs and URLs**: Not meant for searching
+- **IDs and URLs**: Not meant for searching (rid, url)
 - **Summary fields**: Contain overlapping information with indexed fields
 - **Avoids duplicate matches**: Prevents same content matching multiple times
 
+**Note:** Even with `index: false`, keyword fields still have doc_values enabled, allowing aggregation and sorting if needed.
+
 ---
 
-#### 2. Filterable/Aggregatable Fields
+#### 3. Filterable/Aggregatable Fields
 
 ##### Country Field
 
@@ -297,7 +416,7 @@ Matches:    All words starting with "tech"
 
 ---
 
-#### 3. Searchable Text Fields
+#### 4. Searchable Text Fields
 
 ##### Event Title (Primary Search Field)
 

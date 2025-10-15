@@ -28,6 +28,14 @@
             "asciifolding",
             "edge_ngram_filter"
           ]
+        },
+        "docid_ngram_analyzer": {
+          "type": "custom",
+          "tokenizer": "keyword",
+          "filter": [
+            "lowercase",
+            "docid_ngram_filter"
+          ]
         }
       },
       "filter": {
@@ -39,6 +47,11 @@
         "edge_ngram_filter": {
           "type": "edge_ngram",
           "min_gram": 2,
+          "max_gram": 10
+        },
+        "docid_ngram_filter": {
+          "type": "ngram",
+          "min_gram": 4,
           "max_gram": 10
         }
       }
@@ -52,7 +65,12 @@
       },
       "docid": {
         "type": "keyword",
-        "index": false
+        "fields": {
+          "ngram": {
+            "type": "text",
+            "analyzer": "docid_ngram_analyzer"
+          }
+        }
       },
       "url": {
         "type": "keyword",
