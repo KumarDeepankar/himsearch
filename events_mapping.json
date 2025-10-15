@@ -1,0 +1,152 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 1,
+      "number_of_replicas": 1,
+      "max_ngram_diff": 10
+    },
+    "analysis": {
+      "analyzer": {
+        "standard_search": {
+          "type": "standard",
+          "stopwords": "_english_"
+        },
+        "ngram_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "ngram_filter"
+          ]
+        },
+        "edge_ngram_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "edge_ngram_filter"
+          ]
+        }
+      },
+      "filter": {
+        "ngram_filter": {
+          "type": "ngram",
+          "min_gram": 3,
+          "max_gram": 4
+        },
+        "edge_ngram_filter": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 10
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "rid": {
+        "type": "keyword",
+        "index": false
+      },
+      "docid": {
+        "type": "keyword",
+        "index": false
+      },
+      "url": {
+        "type": "keyword",
+        "index": false
+      },
+      "country": {
+        "type": "keyword"
+      },
+      "year": {
+        "type": "integer"
+      },
+      "event_count": {
+        "type": "integer"
+      },
+      "event_title": {
+        "type": "text",
+        "analyzer": "standard_search",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          },
+          "ngram": {
+            "type": "text",
+            "analyzer": "ngram_analyzer"
+          },
+          "edge_ngram": {
+            "type": "text",
+            "analyzer": "edge_ngram_analyzer"
+          }
+        }
+      },
+      "event_theme": {
+        "type": "text",
+        "analyzer": "standard_search",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          },
+          "ngram": {
+            "type": "text",
+            "analyzer": "ngram_analyzer"
+          }
+        }
+      },
+      "event_highlight": {
+        "type": "text",
+        "analyzer": "standard_search",
+        "fields": {
+          "ngram": {
+            "type": "text",
+            "analyzer": "ngram_analyzer"
+          }
+        }
+      },
+      "event_summary": {
+        "type": "text",
+        "analyzer": "standard_search",
+        "fields": {
+          "ngram": {
+            "type": "text",
+            "analyzer": "ngram_analyzer"
+          }
+        }
+      },
+      "event_object": {
+        "type": "text",
+        "analyzer": "standard_search",
+        "fields": {
+          "ngram": {
+            "type": "text",
+            "analyzer": "ngram_analyzer"
+          }
+        }
+      },
+      "commentary_summary": {
+        "type": "text",
+        "index": false
+      },
+      "next_event_plan": {
+        "type": "text",
+        "index": false
+      },
+      "event_conclusion": {
+        "type": "text",
+        "index": false
+      },
+      "event_conclusion_overall": {
+        "type": "text",
+        "index": false
+      },
+      "next_event_suggestion": {
+        "type": "text",
+        "index": false
+      }
+    }
+  }
+}
