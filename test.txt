@@ -1,6 +1,40 @@
-{'status': 'success', 'result': [{'type': 'text', 'text': '# Events Data Unavailable\n\nI apologize, but I\'m unable to provide information
+docker build -t agentic-search:prod .
+[+] Building 1.5s (14/17)                                                                                                 docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                      0.0s
+ => => transferring dockerfile: 1.17kB                                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/python:3.11-slim                                                                       0.5s
+ => [internal] load metadata for docker.io/library/node:20-slim                                                                           0.5s
+ => [internal] load .dockerignore                                                                                                         0.0s
+ => => transferring context: 2B                                                                                                           0.0s
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s
+ => CACHED [stage-1 3/6] COPY backend /app/backend                                                                                        0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [frontend-builder 3/6] COPY frontend/package.json frontend/package-lock.json ./                                                0.0s
+ => CACHED [frontend-builder 4/6] RUN npm ci --legacy-peer-deps                                                                           0.0s 
+ => CACHED [frontend-builder 5/6] COPY frontend/ ./                                                                                       0.0s 
+ => ERROR [frontend-builder 6/6] RUN npm run build                                                                                        0.3s 
+------
+ > [frontend-builder 6/6] RUN npm run build:
+0.306
+0.306 > agentic_search_react@0.0.0 build
+0.306 > vite build
+0.306
+0.312 /app/frontend/node_modules/.bin/vite: 1: ../vite/bin/vite.js: not found
+------
+Dockerfile:19
+--------------------
+  17 |
+  18 |     # Build the React app
+  19 | >>> RUN npm run build
+  20 |
+  21 |     # Stage 2: Python backend with built frontend
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 127
 
-
-a Unavailable
-
-I apologize, but I'm unable to provide information about incidents over the year due to a technical error when accessing the incident database.
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/rp3bbqx508h3fuqw8jil7kutj
