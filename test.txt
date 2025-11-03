@@ -1,11 +1,5 @@
-docker build --no-cache -t agentic-search:prod .
-[+] Building 10.2s (14/17)                                                                                                docker:desktop-linux
- => [internal] load build definition from Dockerfile                                                                                      0.0s
- => => transferring dockerfile: 1.17kB                                                                                                    0.0s
- => [internal] load metadata for docker.io/library/python:3.11-slim                                                                       0.5s 
- => [internal] load metadata for docker.io/library/node:20-slim                                                                           0.9s 
- => [internal] load .dockerignore                                                                                                         0.0s
- => => transferring context: 2B                                                                                                           0.0s 
+ docker build --no-cache -t agentic-search:prod .
+[+] Building 150.1s (11/17)                                                                                               docker:desktop-linux 
  => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
  => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s 
  => [internal] load build context                                                                                                         0.5s 
@@ -14,27 +8,864 @@ docker build --no-cache -t agentic-search:prod .
  => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
  => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
  => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
- => [frontend-builder 3/6] COPY frontend/package.json frontend/package-lock.json ./                                                       0.1s
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 150.3s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s
+ => => transferring context: 613.22kB                                                                                                     0.5s
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s
+[+] Building 150.4s (11/17)                                                                                               docker:desktop-linux
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s
+ => => transferring context: 613.22kB                                                                                                     0.5s
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s
+[+] Building 150.6s (11/17)                                                                                               docker:desktop-linux
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s
+ => => transferring context: 613.22kB                                                                                                     0.5s
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s
+[+] Building 150.7s (11/17)                                                                                               docker:desktop-linux
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s
+ => => transferring context: 613.22kB                                                                                                     0.5s
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s
+[+] Building 150.9s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 151.0s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 151.2s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 151.3s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 151.5s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 151.6s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 151.8s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 151.9s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 152.1s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 152.2s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 152.4s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 152.5s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 152.7s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 152.8s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 153.0s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 153.1s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 153.3s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 153.4s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 153.6s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 153.7s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 153.9s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 154.0s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 154.2s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 154.3s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 154.5s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 154.6s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 154.8s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 154.9s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 155.1s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 155.2s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 155.4s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 155.5s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 155.7s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 155.8s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 156.0s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 156.1s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 156.3s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 156.4s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 156.6s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 156.7s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 156.9s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 157.0s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 157.2s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 157.3s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 157.5s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 157.6s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 157.8s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 157.9s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 158.1s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 158.2s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 158.4s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 158.5s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 158.7s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 158.8s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 159.0s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 159.1s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 159.3s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 159.4s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 159.6s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 159.7s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 159.9s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 160.0s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 160.2s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 160.3s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 160.5s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 160.6s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 160.8s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 160.9s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 161.1s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 161.2s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 161.4s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 161.5s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 161.7s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 161.8s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s 
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s 
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s 
+[+] Building 162.0s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s 
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s 
+[+] Building 162.1s (11/17)                                                                                               docker:desktop-linux 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+[+] Building 162.3s (11/17)                                                                                               docker:desktop-linux 
+[+] Building 162.4s (11/17)                                                                                               docker:desktop-linux 
+[+] Building 162.6s (11/17)                                                                                               docker:desktop-linux 
+[+] Building 162.7s (11/17)                                                                                               docker:desktop-linux 
+[+] Building 162.9s (11/17)                                                                                               docker:desktop-linux 
+[+] Building 163.0s (11/17)                                                                                               docker:desktop-linux
+[+] Building 163.2s (11/17)                                                                                               docker:desktop-linux
+[+] Building 163.3s (11/17)                                                                                               docker:desktop-linux
+[+] Building 163.5s (11/17)                                                                                               docker:desktop-linux
+[+] Building 163.6s (11/17)                                                                                               docker:desktop-linux
+[+] Building 163.8s (11/17)                                                                                               docker:desktop-linux
+[+] Building 163.9s (11/17)                                                                                               docker:desktop-linux
+[+] Building 164.1s (11/17)                                                                                               docker:desktop-linux
+[+] Building 164.2s (11/17)                                                                                               docker:desktop-linux
+[+] Building 164.4s (11/17)                                                                                               docker:desktop-linux
+[+] Building 164.5s (11/17)                                                                                               docker:desktop-linux
+[+] Building 164.7s (11/17)                                                                                               docker:desktop-linux
+[+] Building 164.8s (11/17)                                                                                               docker:desktop-linux
+[+] Building 165.0s (11/17)                                                                                               docker:desktop-linux
+[+] Building 165.1s (11/17)                                                                                               docker:desktop-linux
+[+] Building 165.3s (11/17)                                                                                               docker:desktop-linux
+[+] Building 165.4s (11/17)                                                                                               docker:desktop-linux
+[+] Building 165.6s (11/17)                                                                                               docker:desktop-linux
+[+] Building 165.7s (11/17)                                                                                               docker:desktop-linux
+[+] Building 165.9s (11/17)                                                                                               docker:desktop-linux
+[+] Building 166.0s (11/17)                                                                                               docker:desktop-linux
+[+] Building 166.2s (11/17)                                                                                               docker:desktop-linux
+[+] Building 166.3s (11/17)                                                                                               docker:desktop-linux
+[+] Building 166.5s (11/17)                                                                                               docker:desktop-linux
+[+] Building 166.6s (11/17)                                                                                               docker:desktop-linux
+[+] Building 166.8s (11/17)                                                                                               docker:desktop-linux
+[+] Building 166.9s (11/17)                                                                                               docker:desktop-linux
+[+] Building 188.6s (14/17)                                                                                               docker:desktop-linux 
+ => [internal] load build definition from Dockerfile                                                                                      0.0s 
+ => => transferring dockerfile: 1.52kB                                                                                                    0.0s 
+ => [internal] load metadata for docker.io/library/node:20-slim                                                                           1.0s 
+ => [internal] load metadata for docker.io/library/python:3.11-slim                                                                       0.6s 
+ => [internal] load .dockerignore                                                                                                         0.0s 
+ => => transferring context: 2B                                                                                                           0.0s 
+ => [frontend-builder 1/6] FROM docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850    0.0s 
+ => => resolve docker.io/library/node:20-slim@sha256:cba1d7bb8433bb920725193cd7d95d09688fb110b170406f7d4de948562f9850                     0.0s 
+ => [internal] load build context                                                                                                         0.5s 
+ => => transferring context: 613.22kB                                                                                                     0.5s 
+ => [stage-1 1/6] FROM docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617         0.0s
+ => => resolve docker.io/library/python:3.11-slim@sha256:8eb5fc663972b871c528fef04be4eaa9ab8ab4539a5316c4b8c133771214a617                 0.0s
+ => CACHED [frontend-builder 2/6] WORKDIR /app/frontend                                                                                   0.0s
+ => CACHED [stage-1 2/6] WORKDIR /app                                                                                                     0.0s
+ => [frontend-builder 3/6] COPY frontend/package.json ./                                                                                  0.0s
  => [stage-1 3/6] COPY backend /app/backend                                                                                               0.1s
- => [frontend-builder 4/6] RUN npm ci --legacy-peer-deps                                                                                  5.7s 
- => [frontend-builder 5/6] COPY frontend/ ./                                                                                              2.4s 
- => ERROR [frontend-builder 6/6] RUN npm run build                                                                                        0.4s 
+ => [frontend-builder 4/6] RUN npm install --legacy-peer-deps &&     echo "=== npm install completed ===" &&     echo "=== Node/npm ve  184.2s
+ => [frontend-builder 5/6] COPY frontend/ ./                                                                                              2.4s
+ => ERROR [frontend-builder 6/6] RUN npm run build                                                                                        0.3s 
 ------
  > [frontend-builder 6/6] RUN npm run build:
-0.395
-0.395 > agentic_search_react@0.0.0 build
-0.395 > vite build
-0.395
-0.400 /app/frontend/node_modules/.bin/vite: 1: ../vite/bin/vite.js: not found
+0.316
+0.316 > agentic_search_react@0.0.0 build
+0.316 > vite build
+0.316
+0.320 /app/frontend/node_modules/.bin/vite: 1: ../vite/bin/vite.js: not found
 ------
-Dockerfile:19
+Dockerfile:26
 --------------------
-  17 |
-  18 |     # Build the React app
-  19 | >>> RUN npm run build
-  20 |
-  21 |     # Stage 2: Python backend with built frontend
+  24 |
+  25 |     # Build the React app with verbose output
+  26 | >>> RUN npm run build
+  27 |
+  28 |     # Stage 2: Python backend with built frontend
 --------------------
 ERROR: failed to build: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 127
 
-View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/ti1vpx7iy97os0zuuq9hqnlh4
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/0h0te46h9ua4mdqkd1017s4wo
